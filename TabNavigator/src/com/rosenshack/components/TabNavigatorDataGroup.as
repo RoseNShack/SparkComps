@@ -7,9 +7,6 @@ package com.rosenshack.components
     import spark.components.DataGroup;
     import spark.events.IndexChangeEvent;
 
-    /**
-     *
-     */
     public class TabNavigatorDataGroup extends DataGroup
     {
 

@@ -3,7 +3,7 @@
                xmlns:s="library://ns.adobe.com/flex/spark"
                xmlns:mx="library://ns.adobe.com/flex/mx"
                xmlns:components="com.saturnboy.components.*"
-               viewSourceURL="srcview/index.html"
+               viewSourceURL="srcview/TerrificTabBar.html"
                backgroundColor="#eeeeee"
                creationComplete="complete()"
                width="500"

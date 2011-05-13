@@ -12,8 +12,7 @@ package com.rosenshack.components
 
         public function TabNavigatorRenderer()
         {
-            this.percentHeight = 100;
-            this.percentWidth = 100;
+            this.autoDrawBackground = false;
         }
 
         public function newInstance():*

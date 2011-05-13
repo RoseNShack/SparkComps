@@ -24,6 +24,8 @@ package com.rosenshack.layout
                 if ( i == selectedIndex )
                 {
                     element.visible = true;
+                    element.width = layoutTarget.width;
+                    element.height = layoutTarget.height;
                 }
                 else
                 {

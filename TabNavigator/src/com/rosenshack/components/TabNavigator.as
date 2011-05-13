@@ -10,13 +10,11 @@ package com.rosenshack.components
     import spark.components.SkinnableContainer;
 
     /**
-     *
+     * Flex 4 / Spark TabNavigator component
+     * Provided the dataProvider ITab components to use
      */
     public class TabNavigator extends SkinnableContainer
     {
-        /**
-         *
-         */
         [Bindable] public var dataProvider:ArrayCollection;
 
         /**
@@ -77,6 +75,9 @@ package com.rosenshack.components
             addElement( dataGroup );
         }
 
+        /**
+         * @private
+         */
         override protected function commitProperties():void
         {
             super.commitProperties();

@@ -5,7 +5,7 @@ package com.rosenshack.components
     import spark.components.Group;
 
     /**
-     *
+     * Basic implementation of the ITab interface for those that need a simple Group container
      */
     public class Tab extends Group implements ITab
     {
