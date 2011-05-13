@@ -6,6 +6,9 @@ package com.rosenshack.layout
 
     import spark.layouts.supportClasses.LayoutBase;
 
+    /**
+     *
+     */
     public class TabNavigatorLayout extends LayoutBase
     {
         override public function updateDisplayList( width:Number, height:Number ):void

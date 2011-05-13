@@ -2,6 +2,9 @@ package com.saturnboy.components
 {
     import mx.core.IVisualElement;
 
+    /**
+     *
+     */
     public interface ITab extends IVisualElement
     {
 

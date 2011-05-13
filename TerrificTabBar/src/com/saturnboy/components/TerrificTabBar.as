@@ -15,6 +15,9 @@ package com.saturnboy.components
     import spark.components.IItemRenderer;
     import spark.components.TabBar;
 
+    /**
+     *
+     */
     [Event( name='closeTab', type='com.saturnboy.events.TerrificTabBarEvent' )]
     public class TerrificTabBar extends TabBar
     {
@@ -44,6 +47,9 @@ package com.saturnboy.components
             }
         }
 
+        /**
+         *
+         */
         public function setCloseableTab( index:int, value:Boolean ):void
         {
             if ( index >= 0 && index < dataGroup.numElements )
@@ -53,6 +59,9 @@ package com.saturnboy.components
             }
         }
 
+        /**
+         *
+         */
         public function getCloseableTab( index:int ):Boolean
         {
             if ( index >= 0 && index < dataGroup.numElements )
@@ -63,6 +72,9 @@ package com.saturnboy.components
             return false;
         }
 
+        /**
+         *
+         */
         public function closeTab( closedTab:int, selectedTab:int ):void
         {
             if ( dataProvider.length == 0 )
@@ -125,6 +137,9 @@ package com.saturnboy.components
             }
         }
 
+        /**
+         * @private
+         */
         override public function updateRenderer( renderer:IVisualElement, itemIndex:int, data:Object ):void
         {
             super.updateRenderer( renderer, itemIndex, data );

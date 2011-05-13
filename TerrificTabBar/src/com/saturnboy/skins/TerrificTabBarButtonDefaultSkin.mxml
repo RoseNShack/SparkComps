@@ -45,8 +45,8 @@
                 bottom="0">
             <s:data>M 0,25 C 10,23 5,2 15,0 L 50,0 C 60,2 55,23 65,25 Z</s:data>
             <s:fill>
-                <s:SolidColor color="#333333"
-                              color.over="#999999"
+                <s:SolidColor color="#999999"
+                              color.over="#555555"
                               color.down="#999999"
                               color.selectedStates="#000000"/>
             </s:fill>

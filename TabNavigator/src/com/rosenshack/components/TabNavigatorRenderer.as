@@ -4,6 +4,9 @@ package com.rosenshack.components
     import mx.core.IFactory;
     import spark.components.supportClasses.ItemRenderer;
 
+    /**
+     *
+     */
     public class TabNavigatorRenderer extends ItemRenderer implements IFactory
     {
 

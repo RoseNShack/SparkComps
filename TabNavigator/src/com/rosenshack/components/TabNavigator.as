@@ -9,17 +9,34 @@ package com.rosenshack.components
 
     import spark.components.SkinnableContainer;
 
+    /**
+     *
+     */
     public class TabNavigator extends SkinnableContainer
     {
+        /**
+         *
+         */
         [Bindable] public var dataProvider:ArrayCollection;
-        [Bindable] public var tabBar:TerrificTabBar;
-        [Bindable] public var dataGroup:TabNavigatorDataGroup;
+
+        /**
+         * @private
+         */
+        public var tabBar:TerrificTabBar;
+
+        /**
+         * @private
+         */
+        public var dataGroup:TabNavigatorDataGroup;
 
         // static block to setup default styles
         {
             setupDefaultStyles( "com.rosenshack.components.TabNavigator", TabNavigatorDefaultSkin );
         }
 
+        /**
+         * @private
+         */
         private static function setupDefaultStyles( compName:String, skinClazz:Class ):void
         {
             var styles:CSSStyleDeclaration = FlexGlobals.topLevelApplication.styleManager.getStyleDeclaration( compName );
@@ -38,6 +55,9 @@ package com.rosenshack.components
             }
         }
 
+        /**
+         * @private
+         */
         override protected function createChildren():void
         {
             super.createChildren();

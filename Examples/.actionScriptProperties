@@ -19,6 +19,7 @@
     <application path="TerrificTabBarMXViewStack.mxml"/>
     <application path="TabNavigator2.mxml"/>
     <application path="TabNavigator.mxml"/>
+    <application path="TerrificTabBar.mxml"/>
   </applications>
   <modules/>
   <buildCSSFiles/>

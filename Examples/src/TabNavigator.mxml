@@ -4,6 +4,7 @@
                xmlns:mx="library://ns.adobe.com/flex/mx"
                xmlns:components="com.rosenshack.components.*"
                xmlns:tabNavigator="tabNavigator.*"
+               viewSourceURL="srcview/TabNavigator.html"
                minWidth="955"
                minHeight="600">
 

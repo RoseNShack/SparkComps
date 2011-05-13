@@ -2,6 +2,9 @@ package com.saturnboy.events
 {
     import flash.events.Event;
 
+    /**
+     *
+     */
     public class TerrificTabBarEvent extends Event
     {
 

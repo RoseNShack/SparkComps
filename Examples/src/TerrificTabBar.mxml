@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx"
+               xmlns:components="com.saturnboy.components.*"
+               viewSourceURL="srcview/index.html"
+               backgroundColor="#eeeeee"
+               creationComplete="complete()"
+               width="500"
+               height="64">
+
+    <fx:Script>
+        <![CDATA[
+            private function complete():void
+            {
+                //make first tab un-closeable
+                tabBar.setCloseableTab( 0, false );
+            }
+
+            private function forceClose():void
+            {
+                tabBar.closeTab( 0, tabBar.selectedIndex );
+            }
+
+            private function addTab():void
+            {
+                tabBar.dataProvider.addItem( 'Foo' );
+            }
+        ]]>
+    </fx:Script>
+
+    <fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace components "com.saturnboy.components.*";
+
+		components|TerrificTabBar {
+			skinClass:ClassReference('skins.TerrificTabBarSkin');
+		}
+		components|TerrificTabBarButton {
+			skinClass:ClassReference('skins.TerrificTabBarButtonSkin');
+		}
+		s|Button {
+			fontSize:11;
+		}
+	</fx:Style>
+
+    <components:TerrificTabBar id="tabBar"
+                               left="5"
+                               top="5"
+                               maxWidth="490">
+        <s:ArrayCollection source="['Moons of Saturn','Epimetheus','Iapetus','Dione','Enceladus']"/>
+    </components:TerrificTabBar>
+
+    <s:HGroup left="5"
+              bottom="5">
+        <s:Button label="Force Close First Tab"
+                  click="forceClose()"/>
+        <s:Button label="Add Tab"
+                  click="addTab()"
+                  enabled="{tabBar.dataProvider.length &lt; 8}"/>
+    </s:HGroup>
+
+</s:Application>

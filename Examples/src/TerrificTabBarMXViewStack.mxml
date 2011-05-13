@@ -2,7 +2,68 @@
 <s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
                xmlns:s="library://ns.adobe.com/flex/spark"
                xmlns:mx="library://ns.adobe.com/flex/mx"
+               xmlns:components="com.saturnboy.components.*"
+               viewSourceURL="srcview/TerrificTabBar2.html"
+               creationComplete="complete()"
                minWidth="955"
                minHeight="600">
 
+    <fx:Script>
+        <![CDATA[
+            private function complete():void
+            {
+                //make first tab un-closeable
+                tabBar.setCloseableTab( 0, false );
+                tabBar.setCloseableTab( 2, false );
+            }
+        ]]>
+    </fx:Script>
+
+    <components:TerrificTabBar id="tabBar"
+                               top="5"
+                               left="5"
+                               right="5"
+                               height="25"
+                               dataProvider="{viewStack}"/>
+
+    <mx:ViewStack id="viewStack"
+                  top="30"
+                  left="5"
+                  right="5"
+                  bottom="5"
+                  borderColor="#000000"
+                  borderStyle="solid">
+        <s:NavigatorContent label="Tab One"
+                            width="100%"
+                            height="100%">
+            <s:Group top="10"
+                     bottom="10"
+                     right="10"
+                     left="10">
+                <s:Label text="tab one"/>
+            </s:Group>
+        </s:NavigatorContent>
+        <s:NavigatorContent label="Tab Two"
+                            width="100%"
+                            height="100%">
+            <s:Group top="10"
+                     bottom="10"
+                     right="10"
+                     left="10">
+                <s:Label text="tab two"/>
+            </s:Group>
+        </s:NavigatorContent>
+        <s:NavigatorContent label="Tab Three"
+                            width="100%"
+                            height="100%">
+            <s:Group top="10"
+                     bottom="10"
+                     right="10"
+                     left="10">
+                <s:Label text="tab three"/>
+            </s:Group>
+        </s:NavigatorContent>
+    </mx:ViewStack>
+
 </s:Application>
+
