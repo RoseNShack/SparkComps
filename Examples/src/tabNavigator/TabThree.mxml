@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+                      xmlns:s="library://ns.adobe.com/flex/spark"
+                      xmlns:mx="library://ns.adobe.com/flex/mx"
+                      implements="com.saturnboy.components.ITab">
+
+    <fx:Script>
+        <![CDATA[
+            import com.saturnboy.components.ITab;
+
+            private var _closeable:Boolean = true;
+            private var _tabTitle:String = "Tab Three";
+
+            [Bindable] public function get tabTitle():String
+            {
+                return _tabTitle;
+            }
+
+            public function set tabTitle( value:String ):void
+            {
+                _tabTitle = value;
+            }
+
+            [Bindable] public function get closeable():Boolean
+            {
+                return _closeable;
+            }
+
+            public function set closeable( value:Boolean ):void
+            {
+                _closeable = value;
+            }
+        ]]>
+    </fx:Script>
+
+    <s:CheckBox label="Tab Three"
+                left="10"
+                top="10"/>
+
+</s:SkinnableContainer>

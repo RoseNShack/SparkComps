@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx"
+               minWidth="955"
+               minHeight="600"
+               xmlns:components="com.saturnboy.components.*"
+               xmlns:components1="com.rosenshack.components.*"
+               xmlns:tabNavigator="tabNavigator.*">
+
+    <!--
+    Example: separate tab bar and DataGroup (stack)
+    -->
+
+    <fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace components "com.saturnboy.components.*";
+		
+		components|TerrificTabBar {
+			skinClass:ClassReference('skins.TerrificTabBarSkin');
+		}
+		components|TerrificTabBarButton {
+			skinClass:ClassReference('skins.TerrificTabBarButtonSkin');
+		}
+		components|TerrificTabBarCloseButton {
+			skinClass:ClassReference('com.saturnboy.skins.TerrificTabBarCloseButtonDefaultSkin');
+		}
+	</fx:Style>
+
+    <components:TerrificTabBar id="tarBar"
+                               left="5"
+                               right="5"
+                               top="5"
+                               height="20"/>
+
+    <s:SkinnableContainer skinClass="skins.Example2BoxSkin"
+                          left="5"
+                          right="5"
+                          top="25"
+                          bottom="5">
+        <components1:TabNavigatorDataGroup id="tabbedStack"
+                                           left="0"
+                                           right="0"
+                                           top="0"
+                                           bottom="0"
+                                           tabBar="{tarBar}">
+            <components1:dataProvider>
+                <s:ArrayCollection>
+                    <tabNavigator:TabOne/>
+                    <tabNavigator:TabTwo/>
+                    <tabNavigator:TabThree/>
+                </s:ArrayCollection>
+            </components1:dataProvider>
+        </components1:TabNavigatorDataGroup>
+    </s:SkinnableContainer>
+
+</s:Application>

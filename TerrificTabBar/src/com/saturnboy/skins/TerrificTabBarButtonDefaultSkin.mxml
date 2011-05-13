@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009"
+             xmlns:s="library://ns.adobe.com/flex/spark"
+             xmlns:components="com.saturnboy.components.*"
+             minWidth="30"
+             maxWidth="150"
+             minHeight="25"
+             alpha.disabled="0.5">
+
+    <fx:Metadata>
+		[HostComponent("com.saturnboy.components.TerrificTabBarButton")]
+	</fx:Metadata>
+
+    <!-- states -->
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"
+                 stateGroups="overStates"/>
+        <s:State name="down"
+                 stateGroups="downStates"/>
+        <s:State name="disabled"
+                 stateGroups="disabledStates"/>
+        <s:State name="upAndSelected"
+                 stateGroups="selectedStates, selectedUpStates"/>
+        <s:State name="overAndSelected"
+                 stateGroups="overStates, selectedStates"/>
+        <s:State name="downAndSelected"
+                 stateGroups="downStates, selectedStates"/>
+        <s:State name="disabledAndSelected"
+                 stateGroups="selectedUpStates, disabledStates, selectedStates"/>
+    </s:states>
+
+    <!-- tab -->
+    <s:Group left="0"
+             right="0"
+             top="0"
+             bottom="0"
+             scaleGridLeft="15"
+             scaleGridRight="50"
+             scaleGridTop="1"
+             scaleGridBottom="24">
+        <s:Path left="0"
+                right="0"
+                top="0"
+                bottom="0">
+            <s:data>M 0,25 C 10,23 5,2 15,0 L 50,0 C 60,2 55,23 65,25 Z</s:data>
+            <s:fill>
+                <s:SolidColor color="#333333"
+                              color.over="#999999"
+                              color.down="#999999"
+                              color.selectedStates="#000000"/>
+            </s:fill>
+        </s:Path>
+    </s:Group>
+
+    <!-- close button -->
+    <components:TerrificTabBarCloseButton id="closeButton"
+                                          right="14"
+                                          top="6"
+                                          visible="{hostComponent.closeable}"/>
+
+    <!-- label -->
+    <s:Label id="labelDisplay"
+             left="14"
+             right="14"
+             top="2"
+             bottom="0"
+             verticalAlign="middle"
+             maxDisplayedLines="1"
+             color="#eeeeee"
+             color.overStates="#ffffff"
+             color.down="#ffffff"
+             fontSize="12"
+             fontWeight="bold"/>
+
+</s:SparkSkin>
