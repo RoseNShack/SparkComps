@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Graphic version="2.0" 
+		 xmlns="http://ns.adobe.com/fxg/2008"  
+		 scaleGridLeft="12" 
+		 scaleGridRight="276" 
+		 scaleGridTop="60" 
+		 scaleGridBottom="280">
+  
+		<!-- border -->
+		<Rect radiusX="6" 
+			  width="300" 
+			  height="300">
+			<fill>
+				<SolidColor color="#333333"/>
+			</fill>
+			<stroke>
+				<SolidColorStroke color="#000000"
+									weight="2"/>
+			</stroke>
+			<filters>
+				<DropShadowFilter blurX="4"
+									blurY="4"
+									distance="8"
+									color="#000000"
+									alpha="0.1"/>
+			</filters>
+		</Rect>
+
+		<!-- header  -->
+		<Rect y="3" 
+			  x="3"
+			  height="42"
+			  width="294" 
+			  topRightRadiusX="5"
+			  topLeftRadiusX="5">
+			<fill>
+				<LinearGradient rotation="90">
+					<GradientEntry color="#666666"
+									 alpha="1"/>
+					<GradientEntry color="#333333"
+									 alpha="1"/>
+				</LinearGradient>
+			</fill>
+		</Rect>
+
+		
+		<!-- body -->
+		<Rect x="5"
+			  y="45"
+		      height="250"
+			  width="290"
+			  radiusX="6">
+			<fill>
+				<SolidColor color="#ffffff"/>
+			</fill>
+		</Rect>
+
+</Graphic>

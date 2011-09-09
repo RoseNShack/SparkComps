@@ -1,44 +1,50 @@
 package com.rosenshack.components
 {
-    import com.rosenshack.layout.TabNavigatorLayout;
-    import com.saturnboy.components.TerrificTabBar;
-    import com.saturnboy.events.TerrificTabBarEvent;
+	import com.rosenshack.layout.TabNavigatorLayout;
+	import com.saturnboy.components.TerrificTabBar;
+	import com.saturnboy.events.TerrificTabBarEvent;
 
-    import spark.components.DataGroup;
-    import spark.events.IndexChangeEvent;
+	import spark.components.DataGroup;
+	import spark.events.IndexChangeEvent;
 
-    public class TabNavigatorDataGroup extends DataGroup
-    {
+	public class TabNavigatorDataGroup extends DataGroup
+	{
 
-        private var _tabBar:TerrificTabBar;
+		private var _tabBar:TerrificTabBar;
 
-        public function TabNavigatorDataGroup()
-        {
-            super();
-            this.layout = new TabNavigatorLayout();
-            this.itemRenderer = new TabNavigatorRenderer();
-        }
+		public function TabNavigatorDataGroup()
+		{
+			super();
+			this.layout=new TabNavigatorLayout();
+			this.itemRenderer=new TabNavigatorRenderer();
+		}
 
-        [Bindable] public function get tabBar():TerrificTabBar
-        {
-            return _tabBar;
-        }
+		[Bindable] public function get tabBar():TerrificTabBar
+		{
+			return _tabBar;
+		}
 
-        public function set tabBar( value:TerrificTabBar ):void
-        {
-            _tabBar = value;
+		public function set tabBar(value:TerrificTabBar):void
+		{
+			_tabBar=value;
 
-            // setup up data provider
-            _tabBar.dataProvider = this.dataProvider;
+			// setup up data provider
+			_tabBar.dataProvider=this.dataProvider;
 
-            // listen for changes
-            _tabBar.addEventListener( IndexChangeEvent.CHANGE, tabChangedHandler );
-        }
+			// listen for changes
+			_tabBar.addEventListener(IndexChangeEvent.CHANGE, tabChangedHandler);
+		}
 
-        private function tabChangedHandler( event:IndexChangeEvent ):void
-        {
-            this.invalidateDisplayList();
-        }
+		public function setIndex(index:int):void
+		{
+			tabBar.selectedIndex=index;
+			this.invalidateDisplayList();
+		}
 
-    }
+		private function tabChangedHandler(event:IndexChangeEvent):void
+		{
+			this.invalidateDisplayList();
+		}
+
+	}
 }

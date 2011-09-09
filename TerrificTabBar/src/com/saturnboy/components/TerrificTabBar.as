@@ -82,13 +82,16 @@ package com.saturnboy.components
                 return;
             }
 
+            var tab:Object;
             if ( dataProvider is IList )
             {
+                tab = dataProvider.getItemAt( closedTab );
                 dataProvider.removeItemAt( closedTab );
             }
             else if ( dataProvider is UIComponent )
             {
                 //remove the entire child from the dataProvider, which also removes it from the ViewStack
+                tab = ( dataProvider as UIComponent ).getChildAt( closedTab );
                 ( dataProvider as UIComponent ).removeChildAt( closedTab );
             }
 
@@ -109,12 +112,14 @@ package com.saturnboy.components
             {
                 selectedIndex = selectedTab;
             }
+
+            dispatchEvent( new TerrificTabBarEvent( TerrificTabBarEvent.CLOSE_TAB, closedTab, tab ) );
         }
 
         protected function closeHandler( e:TerrificTabBarEvent ):void
         {
+            e.stopPropagation();
             closeTab( e.index, this.selectedIndex );
-            this.dispatchEvent( e );
         }
 
         protected override function partAdded( partName:String, instance:Object ):void

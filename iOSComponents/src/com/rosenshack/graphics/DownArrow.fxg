@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Graphic version="2.0" 
+		 xmlns="http://ns.adobe.com/fxg/2008">
+
+		<Path data="M 0,0 L 0,0 30,0 15,15 0,0 Z">
+			<fill>
+				<SolidColor color="#000000"/>
+			</fill>
+			<stroke>
+				<SolidColorStroke color="#000000"
+									weight="1"/>
+			</stroke>
+		</Path>
+				
+</Graphic>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="true" version="3">
+  <includeClasses>
+    <classEntry path="com.rosenshack.components.iOSCallout"/>
+    <classEntry path="com.rosenshack.graphics.DownArrow"/>
+    <classEntry path="com.rosenshack.graphics.UpArrow"/>
+    <classEntry path="com.rosenshack.graphics.iOSCalloutBackground"/>
+    <classEntry path="com.rosenshack.skins.iOSCalloutSkin"/>
+    <classEntry path="com.rosenshack.utils.DefaultStyles"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

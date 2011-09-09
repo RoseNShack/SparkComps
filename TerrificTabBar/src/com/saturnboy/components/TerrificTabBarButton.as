@@ -40,7 +40,7 @@ package com.saturnboy.components
 
         private function closeHandler( e:MouseEvent ):void
         {
-            dispatchEvent( new TerrificTabBarEvent( TerrificTabBarEvent.CLOSE_TAB, itemIndex, true ) );
+            dispatchEvent( new TerrificTabBarEvent( TerrificTabBarEvent.CLOSE_TAB, itemIndex, this.content, true ) );
         }
 
         override protected function partAdded( partName:String, instance:Object ):void
