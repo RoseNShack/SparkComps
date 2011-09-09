@@ -1,32 +1,35 @@
 package com.rosenshack.skins
 {
 
+	import com.rosenshack.components.iOSBlackButton;
 	import com.rosenshack.components.iOSCallout;
 	import com.rosenshack.graphics.DownArrow;
 	import com.rosenshack.graphics.UpArrow;
 	import com.rosenshack.graphics.iOSCalloutBackground;
 
-	import flash.events.Event;
-
-	import spark.components.Group;
 	import spark.components.supportClasses.StyleableTextField;
 	import spark.skins.mobile.SkinnableContainerSkin;
 
-	//[SkinState("normal")]
-	//[SkinState("disabled")]
-	//[HostComponent("com.rosenshack.components.iOSCallout")]
 	public class iOSCalloutSkin extends SkinnableContainerSkin
 	{
 		private var background:iOSCalloutBackground;
 		private var titleLabel:StyleableTextField;
 		private var upArrow:UpArrow;
 		private var downArrow:DownArrow;
-		private var clearButton:Group;
 
 		public function iOSCalloutSkin()
 		{
 			super();
 		}
+
+		//--------------------------------------------------------------------------
+		//
+		//  SkinParts
+		//
+		//--------------------------------------------------------------------------
+
+		public var clearButton:iOSBlackButton;
+
 
 		//--------------------------------------------------------------------------
 		//
@@ -54,8 +57,8 @@ package com.rosenshack.skins
 			downArrow=new DownArrow();
 			this.addChild(downArrow);
 
-			clearButton=new Group();
-			clearButton.id="clearButton";
+			clearButton=new iOSBlackButton();
+			clearButton.roundCorners=true;
 			this.addChild(clearButton);
 
 			//content group
@@ -90,14 +93,12 @@ package com.rosenshack.skins
 				titleLabel.setStyle("color", 0xffffff);
 				titleLabel.commitStyles();
 			}
-		}
 
-		/**
-		 *  @private
-		 */
-		override protected function commitCurrentState():void
-		{
-			alpha=(currentState == "disabled") ? 0.5 : 1;
+			if (clearButton != null)
+			{
+				clearButton.label="Clear";
+				clearButton.visible=(hostComponent as iOSCallout).showClearButton;
+			}
 		}
 
 		/**
@@ -107,16 +108,19 @@ package com.rosenshack.skins
 		{
 			super.layoutContents(unscaledWidth, unscaledHeight);
 
-			setElementPosition(background, 0, 15);
-			setElementSize(background, this.width, this.height - 30);
+			setElementPosition(background, 0, 14);
+			setElementSize(background, this.width, this.height - 28);
 
 			downArrow.y=this.height - 15;
 
 			titleLabel.width=this.width;
 			titleLabel.y=24;
 
-			contentGroup.setLayoutBoundsSize(this.width - 12, this.height - 81);
-			contentGroup.setLayoutBoundsPosition(6, 60);
+			setElementPosition(contentGroup, 6, 60);
+			setElementSize(contentGroup, this.width - 12, this.height - 81);
+
+			setElementPosition(clearButton, this.width - 85, 20);
+			setElementSize(clearButton, 75, 32);
 		}
 
 		/**
@@ -126,22 +130,6 @@ package com.rosenshack.skins
 		{
 			//no background
 		}
-
-		//
-		//
-		//
-
-		protected function clearButton_touchRollOverHandler(event:Event):void
-		{
-//			clearButtonBackgroundEffect.alpha=1;
-		}
-
-		protected function clearButton_touchRollOutHandler(event:Event):void
-		{
-//			clearButtonBackgroundEffect.alpha=0;
-		}
-
-
 
 	}
 }

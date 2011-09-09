@@ -3,12 +3,33 @@
 			   xmlns:s="library://ns.adobe.com/flex/spark"
 			   xmlns:components="com.rosenshack.components.*">
 
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace components "com.rosenshack.components.*";
+				
+		global {
+			fontFamily: Arial;
+			fontSize: 12;
+		}
+	</fx:Style>
+
+	<fx:Script>
+		<![CDATA[
+			protected function ioscallout1_clearHandler(event:Event):void
+			{
+				trace("clear clicked");
+			}
+		]]>
+	</fx:Script>
+
 	<components:iOSCallout width="280"
 						   height="295"
 						   label="Settings"
 						   arrowPositionX="65"
 						   horizontalCenter="0"
-						   verticalCenter="0">
+						   verticalCenter="0"
+						   showClearButton="true"
+						   clear="ioscallout1_clearHandler(event)">
 		<s:Label left="10"
 				 top="10"
 				 fontWeight="bold"

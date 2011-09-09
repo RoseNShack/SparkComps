@@ -6,16 +6,15 @@ package com.rosenshack.components
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 
-	import mx.core.FlexGlobals;
-	import mx.styles.CSSStyleDeclaration;
-
-	import spark.components.Group;
 	import spark.components.SkinnableContainer;
 
 	[Event(name="clear", type="flash.events.Event")]
 	public class iOSCallout extends SkinnableContainer
 	{
 
+		/**
+		 * Set default style class
+		 */
 		{
 			DefaultStyles.setupDefaultStyles("com.rosenshack.components.iOSCallout", iOSCalloutSkin,
 				function():void
@@ -24,10 +23,25 @@ package com.rosenshack.components
 			});
 		}
 
-		[SkinPart(required="false")]
-		public var clearButton:Group;
+		public function iOSCallout()
+		{
+			super();
+		}
 
-		// properties 
+		//--------------------------------------------------------------------------
+		//
+		//  SkinParts
+		//
+		//--------------------------------------------------------------------------
+
+		[SkinPart(required="true")]
+		public var clearButton:iOSBlackButton;
+
+		//--------------------------------------------------------------------------
+		//
+		//  Properties
+		//
+		//--------------------------------------------------------------------------
 
 		[Bindable] public var label:String;
 		[Bindable] public var showClearButton:Boolean=false;
@@ -37,15 +51,11 @@ package com.rosenshack.components
 		[Inspectable(category="General", defaultValue="above", enumeration="above,below")]
 		public var arrowDrection:String="above";
 
-		public function iOSCallout()
-		{
-			super();
-		}
-
-		private function clearClickHandler(event:MouseEvent=null):void
-		{
-			this.dispatchEvent(new Event("clear"));
-		}
+		//--------------------------------------------------------------------------
+		//
+		//  Overridden methods
+		//
+		//--------------------------------------------------------------------------
 
 		override protected function commitProperties():void
 		{
@@ -55,6 +65,17 @@ package com.rosenshack.components
 			{
 				clearButton.addEventListener(MouseEvent.CLICK, clearClickHandler, false, 0, true);
 			}
+		}
+
+		//--------------------------------------------------------------------------
+		//
+		//  methods
+		//
+		//--------------------------------------------------------------------------
+
+		private function clearClickHandler(event:MouseEvent=null):void
+		{
+			this.dispatchEvent(new Event("clear"));
 		}
 
 	}
